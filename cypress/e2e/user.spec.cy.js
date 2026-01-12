@@ -5,7 +5,7 @@ import MenuPage from '../pages/menuPage.js';
 import MyInfoPage from '../pages/myInfoPage.js';
 
 
-let Chance = require ('chance')
+const Chance = require('chance')
 
 const chance = new Chance()
 const loginPage = new LoginPage() 
@@ -23,9 +23,7 @@ it('User Info Update - Success', () => {
     dashboardPage.checkDashboardPage()
 
     menuPage.accessMyInfo()
-
-
-    myInfoPage.fillPersonalDetails(chance.first(), chance.last(), chance.string)
+    myInfoPage.fillPersonalDetails(chance.first(), chance.last(), chance.string())
     myInfoPage.fillEmployeeDetails('EmployTd', 'otherId','Drivers Number', '2026-01-11')
     myInfoPage.fillStatus()
     myInfoPage.saveForm()
